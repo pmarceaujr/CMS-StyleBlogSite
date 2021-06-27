@@ -1,0 +1,48 @@
+
+<div class="container-fluid main_body">
+  <div class="row">
+    <div class= "container">
+      <h1>Welcome to Talking Tech With PAUL!</h1>
+      <hr>
+  {{#if loggedIN}}      
+      <h4>{{userFirstName}}, welcome back!  Here are our posts.  Click the Subject Line of a post to link to the full post with comments.</h4>
+        <br>
+    </div>
+    <hr>
+  </div>
+{{else}}
+
+      <h4>Reading the posts and comments does not require an account or require you to be logged in, so feel free to browse the all the posts listed below, or filter by
+        category by clicking one of the buttons above to be taken to the desired content.  If you would like to  create an account please click <a href="/signup">Sign Up</a>.  </h4>
+        <br>
+        <h4>Already have an account:  <a href="/login">Login</a>.</h4>
+    </div>
+    <hr>
+  </div>
+  {{/if}}
+
+  {{#if loggedIN}}
+    {{#each posts as |post| }}
+      <div class="card border-secondary shadow  rounded mb-3" >
+        <div class="card-header border-secondary bg-secondary text-white">Category: {{post.category}}</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">Subject: <a href="/api/posts/posts/{{post.id}}">{{post.subject}}</a> </h5>
+          <p class="card-text">{{post.body}}</p>
+           <p class="card-text"><small class="text-muted">-Created By: {{user.username}} on  {{post.createdAt}} </small></p>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    {{#each posts as |post| }}
+    <div class="card border-secondary shadow  rounded mb-3" >
+        <div class="card-header border-secondary bg-secondary text-white">Category: {{post.category}}</div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">Subject: {{post.subject}}</h5>
+          <p class="card-text">{{post.body}}</p>
+          <p class="card-text"><small class="text-muted">-Created on:  {{post.createdAt}} </small></p>
+      </div>
+    </div>
+    {{/each}}
+  {{/if}}
+</div>
+    
