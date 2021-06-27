@@ -1,0 +1,17 @@
+    <div class="container-fluid main_body">
+        <div class="card border-secondary shadow  rounded mb-3" >
+            <div class="card-header border-secondary bg-secondary text-white">Category: {{posts.category}}</div>
+            <div class="card-body text-secondary">
+	            <h5 class="card-title">Subject: {{posts.subject}} </h5>
+            <p class="card-text">{{posts.body}}</p>
+            <p class="card-text"><small class="text-muted">-Created By: {{posts.user.username}} on  {{posts.createdAt}} </small></p>
+            </div>
+        </div>
+            <div>
+                {{#each posts.comments as |comment| }}
+                {{> postComments}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
