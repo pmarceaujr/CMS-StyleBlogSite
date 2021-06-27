@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top" >
+  <div class="flex-row  d-flex justify-content-between" id="nav1">
+    {{#if loggedIN}}
+      <div>
+          <a href="/logout">Logout</a>
+      </div>
+    {{else}}
+      <div>
+        <a href="/login">Login</a>
+      </div>
+    {{/if}}
+    {{#if loggedIN}}
+      <div>
+        <a href="/">Dashboard</a>
+      </div>
+    {{/if}}
+      <div>
+        <a href="/">Home</a>
+      </div>
+  </div>
+</nav>
+<nav class="navbar navbar-default navbar-fixed-top " >
+  <div class="flex-row  d-flex justify-content-between " id="nav2">
+    <div class="flex-row   d-flex justify-content-between nav3 "  > 
+      <a class="navLinks nav5 btn btn-outline-success btn1 " href="/HTML">HTML</a>
+      <a class="navLinks nav5 btn btn-outline-success btn1" href="/CSS">CSS</a>
+    </div>
+    <div>      
+        <a href="/"><img class="logo_img nav0" src="/assets/images/tech-NoGrid.png" alt="Home" width="350px"></a>
+    </div>
+    <div class="flex-row  d-flex justify-content-between nav3">
+        <a class="navLinks nav5 btn btn-outline-success btn1" href="/NODE">NODE</a>
+        <a class="navLinks nav5 btn btn-outline-success btn1" href="/REACT">REACT</a>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
