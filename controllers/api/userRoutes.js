@@ -56,17 +56,8 @@ router.post('/login', async (req, res) => {
         req.session.username = userData.username;
         req.session.userFirstName = userData.firstName;
         req.session.loggedIn = true;
-        console.log('==============================================')
-        console.log(userData.id)
-        console.log(req.session.username)
-        console.log(req.session.userFirstName)
-        console.log(req.session.user_id)
-        console.log("WTF2:" + req.session.loggedIn)
-        console.log('==============================================')
         req.session.save()
         res.redirect('../../')
-        // });
-        // console.log("this" + savesession)
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
