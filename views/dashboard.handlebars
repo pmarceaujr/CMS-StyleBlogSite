@@ -1,0 +1,28 @@
+
+<div class="container-fluid main_body">
+  <div class="">
+    <div class= "container">
+      <h1>Welcome to Talking Tech With PAUL!</h1>
+
+     <hr>
+
+
+  {{#if posts.length}}
+        <h3>Here is a listing of all your posts:</h3>
+    <a class="btn btn-primary mb-3" href="/api/posts/newPost"> Add Post</button></a>
+    {{#each posts as |post| }}
+      <div class="card border-secondary shadow  rounded mb-3" >
+        <div class="card-header border-secondary bg-secondary text-white d-flex justify-content-between">Category: {{post.category}} <span class="badge  btn btn-danger text-white"><a class="text-white" href="/api/posts/delete/{{post.id}}">X</a></span></div>
+        <div class="card-body text-secondary">
+          <h5 class="card-title">Subject: {{post.subject}} - <a href="/api/posts/editPosts/{{post.id}}">Edit Post</a>  </h5>
+          <p class="card-text">{{post.body}}</p>
+           <p class="card-text"><small class="text-muted">-Created By: <span class="badge  bg-warning text-dark"> YOU </span> on  {{post.createdAt}} Total comments: <span class="badge rounded-pill bg-warning text-dark">{{comments.length}}</span></small></p>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+<h2>You currently do not have any posts.</h2>
+<a class="btn btn-primary mb-3" href="/api/posts/newPost"> Add Post</button></a>
+  {{/if}}
+</div>
+    

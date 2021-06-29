@@ -1,0 +1,19 @@
+    <div class="container-fluid main_body">   
+        <div class=" ">
+            <div class= "container">  
+                <h4>Add A New Comment</h4>
+                <form class='d-flex flex-column  justify-content-end' method="POST" action="/api/comments/newComment">
+                    <div class="form-group ">
+                        <label for="">Comment Text:</label>
+                        <span id="errorMsg2"></span>
+                        <textarea id="comment" class="form-control" name="comment"  rows="10" cols="50" style="margin-bottom:20px;"></textarea> 
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="newComment" value="Submit Comment" class="form-control btn btn-primary" name="newComment" style="">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+

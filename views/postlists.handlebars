@@ -1,12 +1,15 @@
     <div class="container-fluid main_body">
-        <div class="card border-secondary shadow  rounded mb-3" >
-            <div class="card-header border-secondary bg-secondary text-white">Category: {{posts.category}}</div>
-            <div class="card-body text-secondary">
-	            <h5 class="card-title">Subject: {{posts.subject}} </h5>
-            <p class="card-text">{{posts.body}}</p>
-            <p class="card-text"><small class="text-muted">-Created By: {{posts.user.username}} on  {{posts.createdAt}} </small></p>
+        <div class="">
+            <div class= "container">
+                <a class="btn btn-primary mb-3" href="/newComment"> Add Comment</button></a>
+                <div class="card border-secondary shadow  rounded mb-3" >
+                <div class="card-header border-secondary bg-secondary text-white">Category: {{posts.category}}</div>
+                <div class="card-body text-secondary">
+	                <h5 class="card-title">Subject: {{posts.subject}} </h5>
+                    <p class="card-text">{{posts.body}}</p>
+                    <p class="card-text"><small class="text-muted">-Created By: <span class="badge  bg-warning text-dark">{{posts.user.username}}</span> on  {{posts.createdAt}}  Total comments: <span class="badge rounded-pill bg-warning text-dark">{{posts.comments.length}}</span></small></p>
+                </div>
             </div>
-        </div>
             <div>
                 {{#each posts.comments as |comment| }}
                 {{> postComments}}

@@ -11,8 +11,12 @@
     {{/if}}
     {{#if loggedIN}}
       <div>
-        <a href="/">Dashboard</a>
+        <a href="/api/posts/posts">Dashboard</a>
       </div>
+    {{else}}
+      <div>
+        <a href="/login">Dashboard</a>
+      </div>    
     {{/if}}
       <div>
         <a href="/">Home</a>
