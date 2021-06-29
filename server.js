@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const methodOverride = require('method-override');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const hbs = exphbs.create({});
@@ -13,7 +14,7 @@ const app = express();
 
 const sess = {
     secret: 'SuperSecretSquirrel',
-    cookie: { maxAge: 1000 * 60 * 10 }, //10 minutes
+    cookie: { maxAge: 1000 * 60 * 60 },  //60 minutes
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -30,7 +31,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride('_method'));
 app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
