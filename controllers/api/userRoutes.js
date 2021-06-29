@@ -23,7 +23,6 @@ router.post('/signup', async (req, res) => {
         req.session.loggedIn = true;
         res.redirect('../../');
         //});
-        console.log("WTF5:" + req.session.loggedIn)
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -52,16 +51,22 @@ router.post('/login', async (req, res) => {
             return;
         }
         console.log("WTF1:" + req.session.loggedIn)
-        //const savesession = await req.session.save(() => {
+        //const savesession = await req.session.save() => {
         req.session.user_id = userData.id;
         req.session.username = userData.username;
         req.session.userFirstName = userData.firstName;
         req.session.loggedIn = true;
-
-        // });
+        console.log('==============================================')
+        console.log(userData.id)
+        console.log(req.session.username)
+        console.log(req.session.userFirstName)
+        console.log(req.session.user_id)
         console.log("WTF2:" + req.session.loggedIn)
-        res.redirect('../../');
-
+        console.log('==============================================')
+        req.session.save()
+        res.redirect('../../')
+        // });
+        // console.log("this" + savesession)
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
