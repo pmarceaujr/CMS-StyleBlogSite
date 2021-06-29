@@ -58,7 +58,15 @@ body {
   position: relative;
 }
 
-.form-control {
+/*.form-control {
   display: inline-block;
   width: 50%;
+}*/
+
+textarea {
+  vertical-align: top;
+}
+
+​ .badge {
+  font-size: 0.85rem;
 }
