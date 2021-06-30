@@ -42,15 +42,15 @@ GIVEN a CMS-style blog site<br>WHEN I visit the site for the first time<br>THEN 
 
 ## Landingpage, not logged in:
 
-![media file 1](./includes/images/notLoggedIn.png)
+![media file 1](./images/notLoggedIn.png)
 
 ## Login Page:
 
-![media file 2](./includes/images/loginPage.png)
+![media file 2](./images/loginPage.png)
 
 ## Landingpage, logged in:
 
-![media file 3](./includes/images/loggedIn.png)
+![media file 3](./images/loggedIn.png)
 
 ## User dashboard:
 
