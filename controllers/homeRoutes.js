@@ -4,7 +4,7 @@ const { Comments, Users, Posts } = require('../models');
 
 console.log("In home Routes")
 //Get All posts for the home page listing order by date created desc (Newest at the top)
-router.get('/', async (req, res) => {
+/*router.get('/', async (req, res) => {
     console.log("Here I am")
     console.log(`before: userId: ${req.session.user_id}, loggedIN: ${req.session.loggedIn}`)
     const postsData = await Posts.findAll({
@@ -32,7 +32,22 @@ router.get('/', async (req, res) => {
     const posts = await postsData.map((post) => post.get({ plain: true }));
     console.log(`userId: ${req.session.user_id}, loggedIN: ${req.session.loggedIn}`)
     res.render('homepage', { posts, userId: req.session.user_id, userFirstName: req.session.userFirstName, loggedIN: req.session.loggedIn })
-})
+})*/
+//Get the signup page loaded, if logged in, then display the homepage, otherwise, reload the signup page
+router.get('/', async (req, res) => {
+    try {
+        // if (req.session.loggedIn) {
+        res.redirect('/api/posts/');
+        //   return;
+        // }
+        // res.render('signup')
+    }
+    catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 
 //Get the signup page loaded, if logged in, then display the homepage, otherwise, reload the signup page
 router.get('/signup', async (req, res) => {
