@@ -50,7 +50,6 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Incorrect password. Please try again!' });
             return;
         }
-        console.log("WTF1:" + req.session.loggedIn)
         //const savesession = await req.session.save() => {
         req.session.user_id = userData.id;
         req.session.username = userData.username;

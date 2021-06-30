@@ -3,36 +3,6 @@ const router = require('express').Router();
 const { Comments, Users, Posts } = require('../models');
 
 console.log("In home Routes")
-//Get All posts for the home page listing order by date created desc (Newest at the top)
-/*router.get('/', async (req, res) => {
-    console.log("Here I am")
-    console.log(`before: userId: ${req.session.user_id}, loggedIN: ${req.session.loggedIn}`)
-    const postsData = await Posts.findAll({
-        order: [['created_at', 'DESC',]],
-        include: [
-            {
-                model: Comments,
-                attributes: [
-                    'id',
-                    'comment_text',
-                    'user_id',
-                    'post_id',
-                ],
-            },
-            {
-                model: Users,
-                attributes: [
-                    'id',
-                    'username',
-                ],
-            },
-        ],
-    });
-    // Serialize data so the template can read it
-    const posts = await postsData.map((post) => post.get({ plain: true }));
-    console.log(`userId: ${req.session.user_id}, loggedIN: ${req.session.loggedIn}`)
-    res.render('homepage', { posts, userId: req.session.user_id, userFirstName: req.session.userFirstName, loggedIN: req.session.loggedIn })
-})*/
 //Get the signup page loaded, if logged in, then display the homepage, otherwise, reload the signup page
 router.get('/', async (req, res) => {
     try {
@@ -46,8 +16,6 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-
 
 //Get the signup page loaded, if logged in, then display the homepage, otherwise, reload the signup page
 router.get('/signup', async (req, res) => {

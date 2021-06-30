@@ -6,7 +6,6 @@ const { Posts, Comments, Users, Lookups } = require('../../models');
 
 //Get All HTML Posts for the filter listing page 
 router.put('/updatePost/:id', withAuth, async (req, res) => {
-    console.log("WTF")
     try {
         const postData = await Posts.update(
             {
@@ -199,8 +198,6 @@ router.post('/newPost', withAuth, async (req, res) => {
 
 //Get All posts for the home page listing order by date created desc (Newest at the top)
 router.get('/', async (req, res) => {
-    console.log("Here I am")
-    console.log(`before: userId: ${req.session.user_id}, loggedIN: ${req.session.loggedIn}`)
     const postsData = await Posts.findAll({
         order: [['created_at', 'DESC',]],
         include: [
@@ -224,7 +221,6 @@ router.get('/', async (req, res) => {
     });
     // Serialize data so the template can read it
     const posts = await postsData.map((post) => post.get({ plain: true }));
-    console.log(`userId: ${req.session.user_id}, loggedIN: ${req.session.loggedIn}`)
     res.render('homepage', { posts, userId: req.session.user_id, userFirstName: req.session.userFirstName, loggedIN: req.session.loggedIn })
 })
 
