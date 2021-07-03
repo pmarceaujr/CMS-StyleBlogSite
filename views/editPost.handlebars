@@ -19,7 +19,7 @@
                     <div class="form-group ">
                         <label for="">Post Text:</label>
                         <span id="errorMsg2"></span>
-                        <textarea id="postbodyUpdate" class="form-control"  name="postbodyUpdate"  rows="10" cols="50" style="margin-bottom:20px;"></textarea> 
+                        <textarea id="postbodyUpdate" class="form-control"  name="postbodyUpdate"  rows="10" cols="50" style="margin-bottom:20px;">{{editPost.body}}</textarea> 
                     </div>
                     <div class="form-group">
                         <input type="submit" id="updatePost" value="Update Post" class="form-control btn btn-primary" name="updatePost" style="">
@@ -31,8 +31,5 @@
 
     <br>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-    document.getElementById("postbodyUpdate").value="{{editPost.body}}";
-</script>
+
    
