@@ -25,7 +25,7 @@ app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.set('view engine', 'handlebars'); //can use hbs for handlebars
 
 //add public folder
 app.use(express.json());
