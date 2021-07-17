@@ -75,7 +75,7 @@ No other contributors at this time
 
 ## **Deployed** **Link**
 
-Deployed to HEROKU: https://intense-citadel-38855.herokuapp.com/
+Deployed to HEROKU: https://pmarceaujr-techblog.herokuapp.com
 
 ## **License**
 

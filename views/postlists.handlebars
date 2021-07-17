@@ -6,7 +6,7 @@
                 <div class="card-header border-secondary bg-secondary text-white">Category: {{posts.category}}</div>
                 <div class="card-body text-secondary">
 	                <h5 class="card-title">Subject: {{posts.subject}} </h5>
-                    <p class="card-text">{{posts.body}}</p>
+                    <pre class="card-text">{{posts.body}}</pre>
                     <p class="card-text"><small class="text-muted">-Created By: <span class="badge  bg-warning text-dark">{{posts.user.username}}</span> on  {{posts.createdAt}}  Total comments: <span class="badge rounded-pill bg-warning text-dark">{{posts.comments.length}}</span></small></p>
                 </div>
             </div>

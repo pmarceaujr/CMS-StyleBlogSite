@@ -21,7 +21,7 @@
             <div class="card-header border-secondary bg-secondary text-white ">Category: {{post.category}} </span></div>
             <div class="card-body text-secondary">
               <h5 class="card-title">Subject: <a href="/api/posts/posts/{{post.id}}">{{post.subject}}</a> </h5>
-              <p class="card-text">{{post.body}}</p>
+              <pre class="card-text">{{post.body}}</pre>
               <p class="card-text"><small class="text-muted">-Created By: <span class="badge  bg-warning text-dark">{{user.username}}</span> on  {{post.createdAt}} Total comments: <span class="badge  bg-warning text-dark">{{comments.length}}</span></small></p>
             </div>
           </div>
