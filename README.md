@@ -75,7 +75,7 @@ No other contributors at this time
 
 ## **Deployed** **Link**
 
-Deployed to HEROKU: https://pmarceaujr-techblog.herokuapp.com
+[Hosted on Heroku](https://pmarceaujr-tech-blog-51213dd540bd.herokuapp.com/api/posts/)
 
 ## **License**
 
