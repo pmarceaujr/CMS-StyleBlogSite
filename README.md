@@ -32,7 +32,7 @@ GIVEN a CMS-style blog site<br>WHEN I visit the site for the first time<br>THEN 
 
 ## **Installation**
 
-- Steps to install The Application Locally<br> + Install Node.js<br> + Clone repository to your local machine<br> + Run "npm install" to install all dependencies<br> + Open MYSQL workbench and execute the schema<br> + Type "node seeds/index.js" on the root to seed the tables<br> + Type "node server.js" on the root to run the application<br><br> # The application is deployed to heroku: https://pmarceaujr-techblog.herokuapp.com
+- Steps to install The Application Locally<br> + Install Node.js<br> + Clone repository to your local machine<br> + Run "npm install" to install all dependencies<br> + Open MYSQL workbench and execute the schema<br> + Type "node seeds/index.js" on the root to seed the tables<br> + Type "node server.js" on the root to run the application<br><br> # The application is deployed to heroku: https://pmarceaujr-tech-blog-51213dd540bd.herokuapp.com/api/posts/
 
 ## **Usage**
 
